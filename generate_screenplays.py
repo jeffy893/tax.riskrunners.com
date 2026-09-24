@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Tax Playbook Screenplay Generator
-Generates 12 standalone HTML screenplays teaching US Tax Code strategies
+Generates standalone HTML screenplays teaching US Tax Code strategies
 through dramatic storytelling (audits, heists, courtroom scenes).
 Requires: Python 3.10+, Pillow (pip install Pillow)
 """
@@ -37,6 +37,7 @@ PALETTES = [
     {"accent": "#5B7DB1", "accent_rgb": "91,125,177", "name": "Slate Blue"},
     {"accent": "#8B5E3C", "accent_rgb": "139,94,60", "name": "Warm Brown"},
     {"accent": "#7B2D8B", "accent_rgb": "123,45,139", "name": "Violet"},
+    {"accent": "#0E7C7B", "accent_rgb": "14,124,123", "name": "Deep Teal"},
 ]
 
 # ─── Screenplay Data ─────────────────────────────────────────────────────────
@@ -3864,6 +3865,311 @@ FADE OUT.
     ]
 }
 
+# ═══════════════════════════════════════════════════════════════════════════════
+# SCREENPLAY 13: Section 351 Incorporation Exchange (The Tax-Free Handoff)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+SCREENPLAYS["Section 351 Exchange"] = {
+    "title": "The 351 Exchange: The Tax-Free Handoff",
+    "tax_section": "IRC Section 351",
+    "subtitle": "A Tax Playbook Screenplay",
+    "genre": "The Loophole (Heist/Caper)",
+    "filename": "screenplay_351_exchange.html",
+    "summary": "Two founders learn how to drop appreciated assets into a new corporation in exchange for stock without triggering a dime of tax — as long as they walk away holding 80% control the moment the deal closes.",
+    "diagram": """
+  APPRECIATED             SECTION 351               NEW
+  PROPERTY               INCORPORATION            CORPORATION
+ ─────────────         ═══════════════         ─────────────
+ Founder A:      ──╲                      ╱──  Founder A gets
+ Software IP      ───╲  ┌─────────────┐ ╱───  700 shares (70%)
+ basis $50K,      ────╳──│  SECTION 351  │──╳──
+ worth $700K      ───╱  └─────────────┘ ╲───  Founder B gets
+ Founder B:       ╱                        ╲  300 shares (30%)
+ Cash + gear     ╱      NO GAIN RECOGNIZED    ╲ ── Combined = 100%
+ worth $300K              (if control test met)      (≥ 80% CONTROL ✓)
+
+  THE 3 TESTS:          WATCH FOR "BOOT":       RESULT:
+ ─────────────         ═══════════════         ─────────────
+ • Transfer PROPERTY   Cash / notes / debt     • $0 tax at formation
+ • SOLELY for STOCK      relief you receive     • Basis carries into
+ • ≥ 80% CONTROL         = taxable "boot"         stock (substituted)
+   right after         Services ≠ property      • Corp takes carryover
+                        (that stock is wages)      basis in the assets
+
+ ────────────────────────────────────────────────
+ THE MATH:
+ Founder A's IP: $700K value − $50K basis = $650K built-in gain
+ Sell it into the corp?  $650K × 23.8% = ~$154,700 tax bill
+ Contribute under §351?  $0 now. Basis of $50K rides into the stock.
+ Gain is deferred until the stock is actually sold.
+""",
+    "pages": [
+        {
+            "heading": "PAGE 1 — INT. STARTUP LOFT — NIGHT",
+            "content": """FADE IN:
+
+A converted warehouse loft. Whiteboards everywhere. Empty cold-brew cans. RAY OKONKWO (30s, engineer-founder, hoodie, guarded) and PRIYA NAIR (30s, startup attorney, calm, precise) sit at a reclaimed-wood table.
+
+RAY
+So we're finally incorporating. I built the software — the whole platform, two years of my life. Deepa's putting in cash and the server hardware. My accountant says the second I hand my code to a company, I've "sold" it and I owe tax on what it's worth. Is that real?
+
+PRIYA
+It can be. If you transferred that IP to a company in a plain sale, yes — you'd recognize gain on the difference between your basis and its value. What's your basis in the code?
+
+RAY
+Basically nothing. Maybe fifty grand in expenses I capitalized.
+
+PRIYA
+And what's it worth today?
+
+RAY
+A buyer offered seven hundred thousand for it last month.
+
+PRIYA
+(leaning back)
+So a straight sale into your own company would hand you a six-hundred-fifty-thousand-dollar gain. At today's rates, call it a hundred-fifty-thousand-dollar tax bill — on a company that has no cash yet.
+
+RAY
+That would kill us before we start.
+
+PRIYA
+It would. Which is exactly why Congress wrote Section 351."""
+        },
+        {
+            "heading": "PAGE 2 — THE CORE IDEA",
+            "content": """Priya walks to a clean whiteboard.
+
+PRIYA
+Section 351 is the incorporation equivalent of a 1031 exchange. The logic is the same: if you're not really cashing out — you're just changing the legal wrapper around your assets — the tax code shouldn't tax you yet.
+
+RAY
+Meaning?
+
+PRIYA
+When you transfer property to a corporation and you receive stock in return, you have not fundamentally changed your economic position. Before, you owned the code. After, you own stock in a company whose main asset is the code. Same value, different shape.
+
+She writes: PROPERTY IN → STOCK OUT → NO GAIN.
+
+PRIYA (CONT'D)
+So Section 351 says: no gain and no loss is recognized on that transfer. Not "reduced." Not "deferred to next year." Zero at the moment of incorporation — provided we hit the requirements.
+
+RAY
+Same trick real estate people use with 1031?
+
+PRIYA
+Same philosophy, different section. 1031 is like-kind property for like-kind property. 351 is property for corporate stock. Both defer gain because you never truly liquidated."""
+        },
+        {
+            "heading": "PAGE 3 — THE THREE TESTS",
+            "content": """PRIYA
+There are three tests. Miss any one and the whole thing becomes taxable.
+
+She writes three lines.
+
+PRIYA (CONT'D)
+Test one: you must transfer PROPERTY. Cash counts. Equipment counts. Intellectual property counts. But services do NOT count as property. If you get stock in exchange for agreeing to work, that stock is compensation — ordinary income, taxed as wages.
+
+RAY
+I'm contributing the code, not my labor. So that's property.
+
+PRIYA
+Correct. Test two: you must receive stock SOLELY in exchange for that property. Ideally common or preferred stock. If you also take back cash or a note, that extra piece has its own consequences — we'll get to that.
+
+She underlines the third line twice.
+
+PRIYA (CONT'D)
+Test three, the one people blow: immediately after the exchange, the transferors — as a group — must CONTROL the corporation. Control means owning at least 80% of the voting stock and 80% of every other class of stock.
+
+RAY
+Eighty percent. As a group meaning me and Deepa together?
+
+PRIYA
+Everyone who contributes property in the same transaction is counted together. You and Deepa both contribute property and walk out owning 100% of the company. Eighty percent test — easily satisfied."""
+        },
+        {
+            "heading": "PAGE 4 — THE CONTROL TEST IN DETAIL",
+            "content": """RAY
+Why 80%? Why not just "you own some of it"?
+
+PRIYA
+Because the whole theory is continuity. Congress only forgives the tax if you're still substantially invested in the same assets afterward. If you dumped the code into a company and immediately walked away with only 5%, that looks a lot more like a sale to strangers. So the line is 80% control by the property contributors, measured immediately after the exchange.
+
+She draws two stick-figure founders and a box labeled "NEWCO."
+
+PRIYA (CONT'D)
+Here's the trap. Say you bring in an investor in the SAME deal who pays cash for 25% of the company, and they're counted with you — fine. But if you contribute the code, then a month later, as a pre-arranged step, a VC buys 40% from the company... the IRS can argue you didn't have control "immediately after," because the plan was always to give up control.
+
+RAY
+So timing and intent matter.
+
+PRIYA
+Enormously. We document that at formation, the property contributors hold 80% or more. Later financing rounds are separate events. As long as the incorporation stands on its own, the control test is met at the moment that counts."""
+        },
+        {
+            "heading": "PAGE 5 — THE MATH",
+            "content": """RAY
+Give me the actual numbers.
+
+PRIYA
+Your IP: basis $50,000, fair market value $700,000. Built-in gain: $650,000.
+
+She writes on the board.
+
+PRIYA (CONT'D)
+Option A — sell the code to the company. You recognize $650,000 of gain. At a 20% capital gains rate plus the 3.8% net investment income tax, that's 23.8%. Roughly $154,700 in federal tax. Due this year. In cash. From a startup with no revenue.
+
+RAY
+(grimacing)
+
+PRIYA
+Option B — contribute the code under Section 351 for stock. Gain recognized today: zero. Not a dollar leaves your pocket. The $650,000 of gain isn't erased — it's parked. Your $50,000 basis follows you into the stock. That's called substituted basis.
+
+RAY
+So if I sell the stock later...
+
+PRIYA
+Then the gain shows up. Say years from now you sell your shares for $2 million. Your basis is still that original $50,000 carried over, so you'd pay tax on the gain at that point. But you chose when to trigger it — after the company had value and, ideally, cash to pay the tax. You didn't get taxed just for organizing your own business."""
+        },
+        {
+            "heading": "PAGE 6 — BOOT: THE TAXABLE PART",
+            "content": """PRIYA
+Now the trap that mirrors 1031 — it's even called the same thing. Boot.
+
+RAY
+Boot again.
+
+PRIYA
+Boot is anything you receive in the exchange that ISN'T stock. If, along with your shares, the company also hands you $100,000 in cash or a promissory note, that cash is boot.
+
+She writes: GAIN RECOGNIZED = LESSER OF (BOOT RECEIVED) OR (REALIZED GAIN).
+
+PRIYA (CONT'D)
+Boot doesn't blow up the whole deal like failing the control test does. Instead, you recognize gain up to the amount of boot you received. Take $100,000 in cash out, and you'll recognize $100,000 of your gain — even though the rest stays deferred.
+
+RAY
+So if I want zero tax, I take zero cash out. Only stock.
+
+PRIYA
+Exactly. Solely stock, zero boot, zero gain. The instant you pull cash or a note out of the company at formation, you've created a taxable slice.
+
+RAY
+What about the debt on the code? There's a small loan against some of the equipment Deepa's contributing.
+
+PRIYA
+Good catch. If the corporation assumes your liabilities, that's generally NOT treated as boot under Section 357 — unless the debt assumed exceeds your basis in the property, or the debt was taken on for tax-avoidance reasons. We'll size Deepa's contribution so the assumed loan stays under her basis. Then it's clean."""
+        },
+        {
+            "heading": "PAGE 7 — TWO SETS OF BASIS",
+            "content": """RAY
+You keep saying basis carries over. Whose basis, exactly?
+
+PRIYA
+There are two of them, and people mix them up constantly. Let me separate them.
+
+She draws two columns: YOUR STOCK and THE CORPORATION'S ASSETS.
+
+PRIYA (CONT'D)
+First — your basis in the stock you receive. That equals the basis of the property you gave up. You put in code with a $50,000 basis, you get stock with a $50,000 basis. Substituted basis. If you'd taken boot, we'd adjust for that, but you're not.
+
+RAY
+And the company?
+
+PRIYA
+The corporation's basis in the assets you contributed. Under Section 362, the company takes your basis in the code — $50,000 — as its own. That's carryover basis. So the company can only depreciate or amortize off that $50,000, not off the $700,000 value.
+
+RAY
+So the gain lives in two places now?
+
+PRIYA
+It does — that's the tradeoff. The built-in gain exists both in your stock and in the corporation's assets. The government hasn't forgiven the tax; it's preserved it on both sides so it eventually gets collected once. In exchange, you get to build without a tax bill at birth."""
+        },
+        {
+            "heading": "PAGE 8 — COMMON MISTAKES",
+            "content": """PRIYA
+Here are the ways founders wreck a 351.
+
+She holds up one finger.
+
+PRIYA (CONT'D)
+One: taking stock for services. A technical co-founder who "contributes sweat" and gets founder shares is receiving compensation, not doing a property exchange. That stock is taxable wages, and worse, a services-only person doesn't count toward the 80% control group. Contribute actual property, or handle the equity as a separate compensation grant.
+
+Two fingers.
+
+PRIYA (CONT'D)
+Two: losing control immediately after. A pre-arranged sale, a simultaneous big investor buying most of the company, an option that's really a disguised transfer — any of these can drop the property contributors below 80% "immediately after," and the whole exchange becomes taxable.
+
+Three fingers.
+
+PRIYA (CONT'D)
+Three: sloppy boot and liabilities. Pulling cash out at formation, or having the company assume debt that exceeds your basis, triggers gain you didn't expect. And four — forgetting the paperwork. Every transferor attaches a Section 351 statement to the return describing the property, its basis, and the stock received. No statement, no clean record if you're audited.
+
+RAY
+So the discipline is: property only, stock only, 80% control, document everything.
+
+PRIYA
+That's the entire game."""
+        },
+        {
+            "heading": "PAGE 9 — THE REAL-WORLD SEQUENCE",
+            "content": """Priya pulls up a checklist on her laptop.
+
+PRIYA
+Here's how we run your incorporation. Step one: we form the corporation — a clean Delaware C-corp — and authorize the shares.
+
+RAY
+Why a C-corp and not an S-corp or LLC?
+
+PRIYA
+Section 351 works for both C and S corporations. But you told me you want venture funding and possibly Qualified Small Business Stock treatment down the road — that needs a C-corp. And QSBS actually pairs beautifully with a 351: the stock you receive can start its holding-period clock now.
+
+She types.
+
+PRIYA (CONT'D)
+Step two: on the same day, you contribute the code and Deepa contributes cash plus the hardware. Both are property. We issue you 700 shares, Deepa 300 shares. Property contributors hold 100% — control test crushed.
+
+RAY
+Zero cash back to either of us.
+
+PRIYA
+Zero boot. We keep the equipment loan under Deepa's basis so the assumption isn't taxable. Step three: each of you attaches the Section 351 statement to your personal return. Step four: the company records the assets at carryover basis on its books. Step five — later — when you raise your seed round, that's a fresh stock issuance for cash, a separate event that doesn't disturb today's tax-free formation.
+
+RAY
+And nobody writes the IRS a check.
+
+PRIYA
+Not today. You organized a business. The code rewards that, it doesn't punish it."""
+        },
+        {
+            "heading": "PAGE 10 — THE LESSON",
+            "content": """Ray exhales, the tension leaving his shoulders.
+
+RAY
+I genuinely thought incorporating meant a six-figure tax bill just for putting my own work into my own company.
+
+PRIYA
+A lot of founders do — and some of them actually pay it because nobody walked them through Section 351. The irony is that this isn't exotic. Practically every startup, every family business that incorporates, every real estate holding company runs on 351. It's the plumbing of American business formation.
+
+She closes the laptop and slides the term sheet across the table.
+
+PRIYA (CONT'D)
+IRC Section 351 — Transfer to a Corporation Controlled by the Transferor. Property in, stock out, 80% control immediately after, and keep the boot at zero. Do that, and you defer every dollar of built-in gain until you actually choose to sell your shares. Congress wants people to build companies. This is the section that says: go build. We'll settle up when you cash out — not before.
+
+RAY
+(signing)
+Then let's go build.
+
+PRIYA
+I'll file the incorporation in the morning. Bring me your basis records for the code by Friday — that fifty-thousand number has to be airtight.
+
+Ray signs the last page. Priya gathers the documents. Through the loft window, the city lights flicker on, one server rack humming in the corner — the first asset of a company that just came into existence without owing a dime.
+
+FADE OUT.
+
+— END —"""
+        }
+    ]
+}
+
 # ─── Ordered screenplay list ─────────────────────────────────────────────────
 
 SCREENPLAY_ORDER = [
@@ -3879,6 +4185,7 @@ SCREENPLAY_ORDER = [
     "Augusta Rule",
     "Charitable Remainder Trust",
     "Section 179 Deduction",
+    "Section 351 Exchange",
 ]
 
 
@@ -4453,11 +4760,11 @@ def generate_index_html():
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tax.riskrunners.com/">
     <meta property="og:title" content="Tax Playbook — US Tax Code Strategies Through Storytelling">
-    <meta property="og:description" content="Twelve screenplays teaching real US Tax Code strategies — 1031 exchanges, Roth conversions, S-Corp elections, and more — through dramatic storytelling.">
+    <meta property="og:description" content="Thirteen screenplays teaching real US Tax Code strategies — 1031 exchanges, 351 incorporations, Roth conversions, S-Corp elections, and more — through dramatic storytelling.">
     <meta property="og:image" content="https://tax.riskrunners.com/tax-logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tax Playbook — US Tax Code Strategies Through Storytelling">
-    <meta name="twitter:description" content="Twelve screenplays teaching real US Tax Code strategies through dramatic storytelling.">
+    <meta name="twitter:description" content="Thirteen screenplays teaching real US Tax Code strategies through dramatic storytelling.">
     <meta name="twitter:image" content="https://tax.riskrunners.com/tax-logo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@300;400;600;700;900&display=swap');
@@ -4723,7 +5030,7 @@ def generate_index_html():
         <div class="hero-tag">Risk Runners Presents</div>
         <h1>Tax Playbook</h1>
         <p class="hero-sub">US Tax Code strategies — taught not in accounting offices but through audits, heists, courtrooms, and kitchen-table conversations.</p>
-        <div class="hero-iso">Internal Revenue Code &bull; 12 Strategies &bull; Real Savings</div>
+        <div class="hero-iso">Internal Revenue Code &bull; 13 Strategies &bull; Real Savings</div>
     </div>
     <div class="scroll-hint">&darr; Scroll to explore &darr;</div>
 </section>
@@ -4732,12 +5039,12 @@ def generate_index_html():
     <h2>The tax code is 6,000 pages. About 1,000 are ways to reduce your tax.</h2>
     <p>Most people only see the pages that compute their bill. <span class="accent">Tax Playbook</span> teaches the other pages — the ones Congress wrote specifically to incentivize saving, investing, building businesses, and giving to charity. Each screenplay drops a real IRC section into a dramatic scenario: an IRS audit, a CPA heist-planning session, or a Tax Court true crime.</p>
     <p>The strategies are real. The math is real. The characters just make it memorable.</p>
-    <p>Twelve strategies. Twelve stories. All legal.</p>
+    <p>Thirteen strategies. Thirteen stories. All legal.</p>
 </section>
 
 <section class="grid-section" id="screenplays">
     <div class="grid-header">
-        <h2>The Twelve Strategies</h2>
+        <h2>The Thirteen Strategies</h2>
         <p>Click any card to read the full 10-page screenplay.</p>
     </div>
     <div class="grid">
@@ -4796,11 +5103,11 @@ def main():
             next_info = {"filename": SCREENPLAYS[next_key]["filename"], "title": SCREENPLAYS[next_key]["title"]}
 
         # Generate header image
-        print(f"  [{i+1:02d}/12] Generating image for: {data['title']}")
+        print(f"  [{i+1:02d}/{len(SCREENPLAY_ORDER)}] Generating image for: {data['title']}")
         generate_header_image(i, palette, data["title"])
 
         # Generate HTML
-        print(f"  [{i+1:02d}/12] Generating HTML for: {data['title']}")
+        print(f"  [{i+1:02d}/{len(SCREENPLAY_ORDER)}] Generating HTML for: {data['title']}")
         html = generate_screenplay_html(i, key, data, palette, prev_info, next_info)
 
         # Write file
@@ -4817,7 +5124,7 @@ def main():
     print(f"         → index.html")
 
     print("\n" + "=" * 60)
-    print(f"  Generated 12 screenplays + index.html")
+    print(f"  Generated {len(SCREENPLAY_ORDER)} screenplays + index.html")
     print(f"  Output directory: {OUTPUT_DIR}")
     print("=" * 60)
 
